@@ -1,0 +1,13 @@
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.csproj.AssemblyReference.cache
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.Properties.Resources.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.csproj.GenerateResource.cache
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.csproj.CoreCompileInputs.cache
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.LoginForm.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.MainForm.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.ProductEditForm.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\ShoeStore.LoginForm.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\ShoeStore.MainForm.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\ShoeStore.ProductEditForm.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.Form1.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.Form2.resources
+C:\Users\game_\source\repos\WindowsFormsApp12\WindowsFormsApp12\obj\Debug\WindowsFormsApp12.Form3.resources
