@@ -33,7 +33,7 @@ namespace ShoeStore.Forms
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(850, 9);
+            this.lblUser.Location = new System.Drawing.Point(650, 9);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(35, 19);
             this.lblUser.TabIndex = 0;
