@@ -33,11 +33,12 @@ namespace ShoeStore.Forms
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(12, 9);
+            this.lblUser.Location = new System.Drawing.Point(850, 9);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(35, 19);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "User";
+            this.lblUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // dgvProducts
             // 
