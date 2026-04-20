@@ -1,137 +1,31 @@
 ```
 # Build artifacts
-*.obj
+bin/
+obj/
 *.exe
 *.dll
 *.pdb
-*.user
-*.userosscache
-*.suo
-*.cache
-*.ilk
-*.iobj
-*.ipdb
-*.builds
-*.gch
-*.pch
-*.res
-*.to
-*.tlo
-*.tlb
-*.tlh
-*.tmp
+*.userprefs
+
+# Dependencies
+packages/
+node_modules/
+
+# Logs
 *.log
 
-# Visual Studio files
-*.userprefs
-*.sln.docstates
-*.userfile
-*.sdf
-*.opensdf
-*.opendb
-*.VC.db
-*.VC.VC.opendb
-*_i.c
-*_p.c
-*.aps
-*.ncb
-*.opt
-*.plg
-*.vcxproj.filters
-*.vcproj.*.user
-*.vcproj.*.userosscache
-*.vcproj.*.suo
-*.vcproj.*.userprefs
-*.vcproj.*.cache
-*.vcproj.*.builds
-*.vcproj.*.VC.db
-*.vcproj.*.VC.VC.opendb
-*.vcproj.*.userosscache.bak
-*.vcproj.*.userprefs.bak
-*.vcproj.*.suo.bak
-*.vcproj.*.user.bak
-*.vcproj.*.userfile.bak
-*.vcproj.*.sln.docstates.bak
-*.vcproj.*.opensdf.bak
-*.vcproj.*.sdf.bak
-*.vcproj.*.VC.VC.opendb.bak
-*.vcproj.*.VC.db.bak
-*.vcproj.*.opendb.bak
-*.vcproj.*.userosscache.backup
-*.vcproj.*.userprefs.backup
-*.vcproj.*.suo.backup
-*.vcproj.*.user.backup
-*.vcproj.*.userfile.backup
-*.vcproj.*.sln.docstates.backup
-*.vcproj.*.opensdf.backup
-*.vcproj.*.sdf.backup
-*.vcproj.*.VC.VC.opendb.backup
-*.vcproj.*.VC.db.backup
-*.vcproj.*.opendb.backup
-*.vcproj.*.userosscache.old
-*.vcproj.*.userprefs.old
-*.vcproj.*.suo.old
-*.vcproj.*.user.old
-*.vcproj.*.userfile.old
-*.vcproj.*.sln.docstates.old
-*.vcproj.*.opensdf.old
-*.vcproj.*.sdf.old
-*.vcproj.*.VC.VC.opendb.old
-*.vcproj.*.VC.db.old
-*.vcproj.*.opendb.old
-*.vcproj.*.userosscache.orig
-*.vcproj.*.userprefs.orig
-*.vcproj.*.suo.orig
-*.vcproj.*.user.orig
-*.vcproj.*.userfile.orig
-*.vcproj.*.sln.docstates.orig
-*.vcproj.*.opensdf.orig
-*.vcproj.*.sdf.orig
-*.vcproj.*.VC.VC.opendb.orig
-*.vcproj.*.VC.db.orig
-*.vcproj.*.opendb.orig
-*.vcproj.*.userosscache.rej
-*.vcproj.*.userprefs.rej
-*.vcproj.*.suo.rej
-*.vcproj.*.user.rej
-*.vcproj.*.userfile.rej
-*.vcproj.*.sln.docstates.rej
-*.vcproj.*.opensdf.rej
-*.vcproj.*.sdf.rej
-*.vcproj.*.VC.VC.opendb.rej
-*.vcproj.*.VC.db.rej
-*.vcproj.*.opendb.rej
+# Environment
+.env
+.env.local
+*.env.*
 
-# Visual Studio Code files
+# Editors
 .vscode/
+.idea/
+*.swp
+*.swo
 
-# Windows files
+# OS generated files
+.DS_Store
 Thumbs.db
-ehthumbs.db
-Icon?
-desktop.ini
-$RECYCLE.BIN/
-*.cab
-*.msi
-*.msm
-*.msp
-
-# User-specific files
-*.userprefs
-*.userosscache
-*.userosscache.bak
-*.userosscache.backup
-*.userosscache.old
-*.userosscache.orig
-*.userosscache.rej
-
-# Project-specific build outputs
-bin/
-obj/
-Debug/
-Release/
-x64/
-x86/
-Debug*/
-Release*/
 ```
