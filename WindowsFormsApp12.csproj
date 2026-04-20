@@ -109,6 +109,9 @@
     <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.1.2.1721, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
       <HintPath>..\packages\SQLitePCLRaw.provider.dynamic_cdecl.2.1.2\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
     </Reference>
+    <Reference Include="SQLitePCLRaw.nativelibrary, Version=2.1.2.1721, Culture=neutral, PublicKeyToken=502ed628492ab262, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\lib\netstandard2.0\SQLitePCLRaw.nativelibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
@@ -232,4 +235,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  
+  <!-- Copy native SQLite libraries to output directory -->
+  <Target Name="CopySQLiteNativeLibraries" AfterTargets="AfterBuild">
+    <!-- Copy x64 native library to runtimes folder -->
+    <Copy SourceFiles="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x64\native\e_sqlite3.dll" 
+          DestinationFolder="$(OutputPath)runtimes\win-x64\native\" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x64\native\e_sqlite3.dll')" />
+    <!-- Copy x86 native library to runtimes folder -->
+    <Copy SourceFiles="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x86\native\e_sqlite3.dll" 
+          DestinationFolder="$(OutputPath)runtimes\win-x86\native\" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x86\native\e_sqlite3.dll')" />
+    <!-- Also copy to main output folder as fallback -->
+    <Copy SourceFiles="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x64\native\e_sqlite3.dll" 
+          DestinationFolder="$(OutputPath)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x64\native\e_sqlite3.dll') And '$(PlatformTarget)' == 'x64'" />
+    <Copy SourceFiles="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x86\native\e_sqlite3.dll" 
+          DestinationFolder="$(OutputPath)" 
+          SkipUnchangedFiles="true" 
+          Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.1.2\runtimes\win-x86\native\e_sqlite3.dll') And '$(PlatformTarget)' == 'x86'" />
+  </Target>
 </Project>
