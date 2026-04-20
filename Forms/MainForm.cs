@@ -88,13 +88,13 @@ namespace ShoeStore.Forms
                 // Поиск (Real-time)
                 if (!string.IsNullOrEmpty(tbSearch.Text))
                 {
-                    string search = tbSearch.Text.ToLower();
+                    string search = tbSearch.Text;
                     query = query.Where(p => 
-                        p.Name.ToLower().Contains(search) || 
-                        p.Description.ToLower().Contains(search) ||
-                        p.Manufacturer.ToLower().Contains(search) ||
-                        p.SupplierName.ToLower().Contains(search) ||
-                        p.CategoryName.ToLower().Contains(search)
+                        EF.Functions.Like(p.Name, $"%{search}%") || 
+                        EF.Functions.Like(p.Description, $"%{search}%") ||
+                        EF.Functions.Like(p.Manufacturer, $"%{search}%") ||
+                        EF.Functions.Like(p.SupplierName, $"%{search}%") ||
+                        EF.Functions.Like(p.CategoryName, $"%{search}%")
                     );
                 }
 
