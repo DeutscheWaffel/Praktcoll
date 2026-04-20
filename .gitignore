@@ -4,38 +4,30 @@
 *.exe
 *.dll
 *.pdb
-*.userprefs
 *.user
-*.suo
-*.cache
-*.tmp
-*.log
-
-# Visual Studio files
-.vs/
 *.userosscache
 *.sln.docstates
 
-# Windows files
+# Dependencies
+packages/
+bin/
+obj/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
 Thumbs.db
-ehthumbs.db
-Icon?
-``~$*
-
-# Compiled files
-*.exe
-*.dll
-*.pdb
-*.ilk
-*.exp
-*.lib
-*.o
-*.obj
-*.so
-*.dylib
-*.a
-
-# Configuration files that might be generated
-*.userprefs
-*.userosscache
 ```
