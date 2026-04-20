@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using ShoeStore.Data;
 using ShoeStore.Models;
 
-namespace ShoeStore
+namespace ShoeStore.Forms
 {
     public partial class MainForm : Form
     {
@@ -228,7 +228,7 @@ namespace ShoeStore
                 return;
             }
 
-            var form = new ProductEditForm(product, _currentUser);
+            var form = new ShoeStore.Forms.ProductEditForm(product, _currentUser);
             form.FormClosed += (s, args) => { _isEditingOpen = false; LoadProducts(); };
             _isEditingOpen = true;
             form.Show();
@@ -236,7 +236,7 @@ namespace ShoeStore
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            var ordersForm = new OrdersForm(_currentUser);
+            var ordersForm = new ShoeStore.Forms.OrdersForm(_currentUser);
             ordersForm.Show();
         }
 

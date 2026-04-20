@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using ShoeStore.Data;
 using ShoeStore.Models;
 
-namespace ShoeStore
+namespace ShoeStore.Forms
 {
     public partial class ProductEditForm : Form
     {
