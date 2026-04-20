@@ -85,7 +85,7 @@ namespace ShoeStore.Forms
                 using var db = new AppDbContext();
                 var query = db.Products.Include(p => p.Supplier).Include(p => p.Category).AsQueryable();
 
-                // Поиск (Real-time)
+                // Поиск (Real-time) - выполняется на стороне сервера
                 if (!string.IsNullOrEmpty(tbSearch.Text))
                 {
                     string search = tbSearch.Text;
@@ -98,14 +98,7 @@ namespace ShoeStore.Forms
                     );
                 }
 
-                // Фильтр по поставщику
-                if (cbFilterSupplier.SelectedIndex > 0)
-                {
-                    string selectedSupplier = cbFilterSupplier.SelectedItem.ToString();
-                    query = query.Where(p => p.SupplierName == selectedSupplier);
-                }
-
-                // Сортировка
+                // Сортировка - выполняется на стороне сервера
                 if (cbSort.SelectedItem != null)
                 {
                     string sortOption = cbSort.SelectedItem.ToString();
@@ -115,7 +108,16 @@ namespace ShoeStore.Forms
                         query = query.OrderByDescending(p => p.Quantity);
                 }
 
+                // Загрузка данных в память
                 var list = query.ToList();
+
+                // Фильтр по поставщику - выполняется на стороне клиента (в памяти)
+                if (cbFilterSupplier.SelectedIndex > 0)
+                {
+                    string selectedSupplier = cbFilterSupplier.SelectedItem.ToString();
+                    list = list.Where(p => p.SupplierName == selectedSupplier).ToList();
+                }
+
                 dgvProducts.DataSource = null;
                 dgvProducts.DataSource = list;
 
