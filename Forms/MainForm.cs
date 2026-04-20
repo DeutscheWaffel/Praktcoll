@@ -90,11 +90,11 @@ namespace ShoeStore.Forms
                 {
                     string search = tbSearch.Text;
                     query = query.Where(p => 
-                        EF.Functions.Like(p.Name, $"%{search}%") || 
-                        EF.Functions.Like(p.Description, $"%{search}%") ||
-                        EF.Functions.Like(p.Manufacturer, $"%{search}%") ||
-                        EF.Functions.Like(p.SupplierName, $"%{search}%") ||
-                        EF.Functions.Like(p.CategoryName, $"%{search}%")
+                        p.Name.Contains(search) || 
+                        p.Description.Contains(search) ||
+                        p.Manufacturer.Contains(search) ||
+                        p.SupplierName.Contains(search) ||
+                        p.CategoryName.Contains(search)
                     );
                 }
 
