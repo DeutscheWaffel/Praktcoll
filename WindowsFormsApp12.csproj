@@ -192,17 +192,38 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <!-- Models -->
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <!-- Data -->
+    <Compile Include="Data\AppDbContext.cs" />
+    <!-- Forms -->
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProductEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\ProductEditForm.Designer.cs">
+      <DependentUpon>ProductEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OrdersForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrdersForm.Designer.cs">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
