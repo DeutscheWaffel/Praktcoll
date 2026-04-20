@@ -93,11 +93,11 @@ namespace ShoeStore.Forms
                     var allProducts = db.Products.Include(p => p.Supplier).Include(p => p.Category).ToList();
                     
                     var filteredList = allProducts.Where(p => 
-                        (p.Name != null && p.Name.Contains(search, StringComparison.OrdinalIgnoreCase)) || 
-                        (p.Description != null && p.Description.Contains(search, StringComparison.OrdinalIgnoreCase)) ||
-                        (p.Manufacturer != null && p.Manufacturer.Contains(search, StringComparison.OrdinalIgnoreCase)) ||
-                        (p.SupplierName != null && p.SupplierName.Contains(search, StringComparison.OrdinalIgnoreCase)) ||
-                        (p.CategoryName != null && p.CategoryName.Contains(search, StringComparison.OrdinalIgnoreCase))
+                        (p.Name != null && p.Name.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0) || 
+                        (p.Description != null && p.Description.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (p.Manufacturer != null && p.Manufacturer.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (p.SupplierName != null && p.SupplierName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                        (p.CategoryName != null && p.CategoryName.IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0)
                     ).ToList();
 
                     // Сортировка - выполняется на стороне клиента (в памяти)
