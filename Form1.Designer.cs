@@ -51,7 +51,6 @@
             this.tbLogin.Name = "tbLogin";
             this.tbLogin.Size = new System.Drawing.Size(144, 22);
             this.tbLogin.TabIndex = 1;
-            this.tbLogin.TextChanged += new System.EventHandler(this.tbLogin_TextChanged);
             // 
             // tbPass
             // 

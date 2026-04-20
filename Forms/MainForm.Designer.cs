@@ -101,7 +101,6 @@ namespace ShoeStore.Forms
             // 
             this.tbSearch.Location = new System.Drawing.Point(12, 35);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.PlaceholderText = "Поиск...";
             this.tbSearch.Size = new System.Drawing.Size(200, 26);
             this.tbSearch.TabIndex = 6;
             this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
