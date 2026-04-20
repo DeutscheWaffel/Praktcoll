@@ -1,4 +1,4 @@
-namespace ShoeStore
+namespace ShoeStore.Forms
 {
     partial class ProductEditForm
     {

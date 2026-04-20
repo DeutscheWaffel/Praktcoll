@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using ShoeStore.Data;
 using ShoeStore.Models;
 
-namespace ShoeStore
+namespace ShoeStore.Forms
 {
     public partial class LoginForm : Form
     {
@@ -60,7 +60,7 @@ namespace ShoeStore
 
         private void OpenMain(User user)
         {
-            var mainForm = new MainForm(user);
+            var mainForm = new ShoeStore.Forms.MainForm(user);
             mainForm.Show();
             this.Hide();
             
