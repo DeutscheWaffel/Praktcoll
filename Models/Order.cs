@@ -1,3 +1,5 @@
+using System;
+
 namespace ShoeStore.Models
 {
     public class Order

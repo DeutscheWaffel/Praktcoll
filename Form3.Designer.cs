@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp12
+﻿namespace ShoeStore
 {
     partial class Form3
     {
