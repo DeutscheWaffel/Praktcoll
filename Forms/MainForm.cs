@@ -209,7 +209,17 @@ namespace ShoeStore.Forms
                 {
                     // Удаление файла изображения
                     if (!string.IsNullOrEmpty(prod.ImagePath) && File.Exists(prod.ImagePath))
-                        File.Delete(prod.ImagePath);
+                    {
+                        try
+                        {
+                            File.Delete(prod.ImagePath);
+                        }
+                        catch (IOException)
+                        {
+                            // Файл заблокирован, пробуем позже или игнорируем
+                            // Можно добавить попытку удаления при следующей загрузке
+                        }
+                    }
 
                     db.Products.Remove(prod);
                     db.SaveChanges();
