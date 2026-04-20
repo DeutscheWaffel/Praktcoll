@@ -85,19 +85,52 @@ namespace ShoeStore.Forms
                 using var db = new AppDbContext();
                 var query = db.Products.Include(p => p.Supplier).Include(p => p.Category).AsQueryable();
 
-                // Поиск (Real-time) - выполняется на стороне сервера
+                // Поиск (Real-time) - выполняется на стороне клиента для совместимости с SQLite
                 if (!string.IsNullOrEmpty(tbSearch.Text))
                 {
                     string search = tbSearch.Text;
-                    query = query.Where(p => 
-                        p.Name.Contains(search) || 
-                        p.Description.Contains(search) ||
-                        p.Manufacturer.Contains(search) ||
-                        p.SupplierName.Contains(search) ||
-                        p.CategoryName.Contains(search)
-                    );
+                    // Сначала загружаем данные, затем фильтруем в памяти, чтобы избежать ошибок трансляции LINQ
+                    var allProducts = db.Products.Include(p => p.Supplier).Include(p => p.Category).ToList();
+                    
+                    var filteredList = allProducts.Where(p => 
+                        (p.Name != null && p.Name.Contains(search, StringComparison.OrdinalIgnoreCase)) || 
+                        (p.Description != null && p.Description.Contains(search, StringComparison.OrdinalIgnoreCase)) ||
+                        (p.Manufacturer != null && p.Manufacturer.Contains(search, StringComparison.OrdinalIgnoreCase)) ||
+                        (p.SupplierName != null && p.SupplierName.Contains(search, StringComparison.OrdinalIgnoreCase)) ||
+                        (p.CategoryName != null && p.CategoryName.Contains(search, StringComparison.OrdinalIgnoreCase))
+                    ).ToList();
+
+                    // Сортировка - выполняется на стороне клиента (в памяти)
+                    if (cbSort.SelectedItem != null)
+                    {
+                        string sortOption = cbSort.SelectedItem.ToString();
+                        if (sortOption == "Количество (по возр.)")
+                            filteredList = filteredList.OrderBy(p => p.Quantity).ToList();
+                        else if (sortOption == "Количество (по убыв.)")
+                            filteredList = filteredList.OrderByDescending(p => p.Quantity).ToList();
+                    }
+
+                    // Фильтр по поставщику - выполняется на стороне клиента (в памяти)
+                    if (cbFilterSupplier.SelectedIndex > 0)
+                    {
+                        string selectedSupplier = cbFilterSupplier.SelectedItem.ToString();
+                        filteredList = filteredList.Where(p => p.SupplierName == selectedSupplier).ToList();
+                    }
+
+                    dgvProducts.DataSource = null;
+                    dgvProducts.DataSource = filteredList;
+                    
+                    StyleGrid();
+                    
+                    // Настройка колонок
+                    if (dgvProducts.Columns["ImagePath"] != null) dgvProducts.Columns["ImagePath"].Visible = false;
+                    if (dgvProducts.Columns["Id"] != null) dgvProducts.Columns["Id"].Visible = false;
+                    if (dgvProducts.Columns["CategoryId"] != null) dgvProducts.Columns["CategoryId"].Visible = false;
+                    if (dgvProducts.Columns["SupplierId"] != null) dgvProducts.Columns["SupplierId"].Visible = false;
+                    return;
                 }
 
+                // Если поиска нет, выполняем обычный запрос с сортировкой и фильтрацией
                 // Сортировка - выполняется на стороне сервера
                 if (cbSort.SelectedItem != null)
                 {
