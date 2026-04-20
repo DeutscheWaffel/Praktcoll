@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using ShoeStore.Data;
 using ShoeStore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ShoeStore.Forms
 {

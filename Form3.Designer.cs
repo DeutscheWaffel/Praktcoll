@@ -130,14 +130,14 @@
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(108, 191);
+            this.btnUpload.Location = new System.Drawing.Point(122, 191);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(75, 23);
             this.btnUpload.TabIndex = 11;
             this.btnUpload.Text = "button1";
             this.btnUpload.UseVisualStyleBackColor = true;
             // 
-            // ProductEditForm
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +154,7 @@
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.txtName);
-            this.Name = "ProductEditForm";
+            this.Name = "Form3";
             this.Text = "ProductEditForm";
             ((System.ComponentModel.ISupportInitialize)(this.numPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQty)).EndInit();
